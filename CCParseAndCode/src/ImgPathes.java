@@ -15,8 +15,12 @@ public class ImgPathes {
 		String[] pathArray = new String[code.length()];
 		int[] intArray = new int[code.length()];
  		for (int i = 0;i < code.length();i++)  {
+ 			try{
 			intArray[i] = Integer.parseInt(code.substring(i,i+1));
-			
+ 			}
+			catch(NumberFormatException e){
+				intArray[i] = 0;
+			}
 		}
 		for (int i = 0;i < intArray.length; i++)  {
 			pathArray[i] = imgPathes[intArray[i]];
